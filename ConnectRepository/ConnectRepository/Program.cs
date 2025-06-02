@@ -12,6 +12,8 @@ namespace ConnectRepository
         {
             Console.WriteLine("Hello, Connect Repository!");
             Console.WriteLine("Majid Akbarifar");
+            Console.WriteLine("Git connection");
+
         }
     }
 }
