@@ -11,6 +11,7 @@ namespace ConnectRepository
         static void Main(string[] args)
         {
             Console.WriteLine("Hello, Connect Repository!");
+            Console.WriteLine("Majid Akbarifar");
         }
     }
 }
