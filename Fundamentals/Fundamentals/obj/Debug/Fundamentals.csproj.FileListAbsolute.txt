@@ -1,0 +1,7 @@
+C:\Users\052240\source\c#\Fundamentals\Fundamentals\bin\Debug\Fundamentals.exe.config
+C:\Users\052240\source\c#\Fundamentals\Fundamentals\bin\Debug\Fundamentals.exe
+C:\Users\052240\source\c#\Fundamentals\Fundamentals\bin\Debug\Fundamentals.pdb
+C:\Users\052240\source\c#\Fundamentals\Fundamentals\obj\Debug\Fundamentals.csproj.AssemblyReference.cache
+C:\Users\052240\source\c#\Fundamentals\Fundamentals\obj\Debug\Fundamentals.csproj.CoreCompileInputs.cache
+C:\Users\052240\source\c#\Fundamentals\Fundamentals\obj\Debug\Fundamentals.exe
+C:\Users\052240\source\c#\Fundamentals\Fundamentals\obj\Debug\Fundamentals.pdb
