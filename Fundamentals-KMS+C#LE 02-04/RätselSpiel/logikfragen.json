@@ -1,0 +1,52 @@
+[
+  {
+    "Text": "Ein Mann schaut auf ein Foto und sagt: 'Brüder und Schwestern habe ich keine, aber der Vater des Mannes auf dem Bild ist der Sohn meines Vaters.' Wer ist auf dem Bild?",
+    "Optionen": [ "Sein Sohn", "Er selbst", "Sein Vater" ],
+    "IndexRichtigeAntwort": 0
+  },
+  {
+    "Text": "Wenn drei Katzen in drei Minuten drei Mäuse fangen, wie viele Katzen werden benötigt, um 100 Mäuse in 100 Minuten zu fangen?",
+    "Optionen": [ "3", "100", "9" ],
+    "IndexRichtigeAntwort": 0
+  },
+  {
+    "Text": "Ein Zug ist 300 Meter lang und fährt mit 100 km/h. Wie lange braucht er, um einen Tunnel von 700 Metern Länge vollständig zu durchqueren?",
+    "Optionen": [ "36 Sekunden", "40 Sekunden", "30 Sekunden" ],
+    "IndexRichtigeAntwort": 1
+  },
+  {
+    "Text": "Welches Wort ist falsch geschrieben, auch wenn es im Wörterbuch steht?",
+    "Optionen": [ "falsch", "Wörterbuch", "geschrieben" ],
+    "IndexRichtigeAntwort": 0
+  },
+  {
+    "Text": "Ein Vater ist 40 Jahre alt, sein Sohn ist 10. In wie vielen Jahren wird der Vater dreimal so alt wie sein Sohn sein?",
+    "Optionen": [ "5", "10", "20" ],
+    "IndexRichtigeAntwort": 0
+  },
+  {
+    "Text": "Welche Zahl kommt als Nächstes in der Reihe? 2, 3, 5, 9, 17, ?",
+    "Optionen": [ "33", "31", "25" ],
+    "IndexRichtigeAntwort": 1
+  },
+  {
+    "Text": "Ein Mann geht spazieren und trifft auf 3 Hunde. Jeder Hund hat 3 Welpen. Wie viele Beine sehen wir insgesamt?",
+    "Optionen": [ "28", "32", "48" ],
+    "IndexRichtigeAntwort": 2
+  },
+  {
+    "Text": "Ich bin eine ungerade Zahl. Nimm mir einen Buchstaben weg, und ich werde gerade. Was bin ich?",
+    "Optionen": [ "Siebzehn", "Elf", "Sieben" ],
+    "IndexRichtigeAntwort": 2
+  },
+  {
+    "Text": "Was ist schwerer: ein Kilo Federn oder ein Kilo Steine?",
+    "Optionen": [ "Beides gleich", "Steine", "Federn" ],
+    "IndexRichtigeAntwort": 0
+  },
+  {
+    "Text": "Ein Apfelbaum hat zehn Äste. Jeder Ast hat zehn Zweige. Jeder Zweig hat einen Apfel. Wie viele Äpfel hängen am Baum?",
+    "Optionen": [ "100", "0", "10" ],
+    "IndexRichtigeAntwort": 1
+  }
+]
