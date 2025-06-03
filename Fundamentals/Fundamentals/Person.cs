@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace Fundamentals
 {
-    internal class Person
+    public class Person
     {
         public String Vorname { get; set; }
         public String Nachname { get; set; }
         public int PersonAlter { get; set; }
         public void Display()
         {
-            Console.WriteLine($"Name: {Vorname} {Nachname}, Age: {PersonAlter}\n");
+            Console.WriteLine($"Name: {Vorname} {Nachname}, Age: {PersonAlter}");
         }
     }// End of Person class
 }

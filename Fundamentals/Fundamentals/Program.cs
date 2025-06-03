@@ -12,6 +12,7 @@ namespace Fundamentals
         static void Main(string[] args)
         {
             bool flagExit = false;
+
             while (!flagExit)
             {
                 myMenu();
@@ -27,12 +28,15 @@ namespace Fundamentals
                     case "2":
                         PersonUnter30();
                         break;
+
                     case "3":
                         AllePeronen();
                         break;
+
                     case "4":
                         flagExit = true;
                         break;
+
                     default:
                         Console.WriteLine("Bitte versuchen Sie es erneut.");
                         break;
@@ -42,15 +46,18 @@ namespace Fundamentals
 
 
             // metodes
-             void myMenu()
+         
+            void myMenu()
             {
-                Console.WriteLine("1. Neu Person");
-                Console.WriteLine("2. Alle Personen unter 30 Jahre");
-                Console.WriteLine("3. Alle Personen");
-                Console.WriteLine("4. Beenden");
-                Console.Write("Select an option: ");
+                Console.WriteLine();
+                Console.WriteLine("\t1. Neu Person");
+                Console.WriteLine("\t2. Alle Personen unter 30 Jahre");
+                Console.WriteLine("\t3. Alle Personen");
+                Console.WriteLine("\t4. Beenden");
+                Console.Write("\tSelect an option: ");
             }// End of myMenu method
-
+           
+            // metodes neu Person Hinzufügen
             void AddPerson()
             {
                 while (true)
@@ -95,9 +102,10 @@ namespace Fundamentals
                 }//End of while loop in AddPerson method
             }//End of AddPerson method
 
-
+            // Metode zum erstellen eine Liste für Personen unter 30 jahre von personList
             void PersonUnter30(){
-                var listUnter30 = personList.Where(p => p.PersonAlter < 30).ToList();
+
+                var listUnter30 = personList.Where(person => person.PersonAlter < 30).ToList();
                 if(listUnter30.Count > 0)
                 {
                     Console.WriteLine("Personen unter 30 Jahren:");
@@ -112,6 +120,7 @@ namespace Fundamentals
                 }
             }// End of PersonUnter30 method
 
+            //Metod zum Alle Personen in personList anzeigen
             void AllePeronen()
             {
                 if (personList.Count > 0)
