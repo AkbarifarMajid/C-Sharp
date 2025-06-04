@@ -63,9 +63,10 @@ namespace RätselSpiel
         // Metode zum Mathe-Spiel
         private void SpieleMatheFragen()
         {
+            //gesamtPunkte = 0;
             while (true)
             {
-          
+                Console.WriteLine("Sie haben 20 Sekunden Zeit, um jede Frage zu beantworten.");
                 Console.WriteLine("\nMathematische Aufgabe:");
 
                 //
@@ -87,9 +88,11 @@ namespace RätselSpiel
         // Metode zum Logisch Spielen
         private void SpieleLogikFragen()
         {
+           // gesamtPunkte = 0;
             while (true)
             {
                 Console.WriteLine("\nLogikrätsel:");
+                Console.WriteLine("Sie haben 30 Sekunden Zeit, um jede Frage zu beantworten.");
 
                 //
                 int punkte = logicService.LogikRätselBewertung();

@@ -5,3 +5,10 @@ C:\Users\052240\source\c#\ConnectRepository\ConnectRepository\obj\Debug\ConnectR
 C:\Users\052240\source\c#\ConnectRepository\ConnectRepository\obj\Debug\ConnectRepository.csproj.CoreCompileInputs.cache
 C:\Users\052240\source\c#\ConnectRepository\ConnectRepository\obj\Debug\ConnectRepository.exe
 C:\Users\052240\source\c#\ConnectRepository\ConnectRepository\obj\Debug\ConnectRepository.pdb
+C:\Users\052240\source\C-Sharp\ConnectRepository\ConnectRepository\bin\Debug\ConnectRepository.exe.config
+C:\Users\052240\source\C-Sharp\ConnectRepository\ConnectRepository\bin\Debug\ConnectRepository.exe
+C:\Users\052240\source\C-Sharp\ConnectRepository\ConnectRepository\bin\Debug\ConnectRepository.pdb
+C:\Users\052240\source\C-Sharp\ConnectRepository\ConnectRepository\obj\Debug\ConnectRepository.csproj.AssemblyReference.cache
+C:\Users\052240\source\C-Sharp\ConnectRepository\ConnectRepository\obj\Debug\ConnectRepository.csproj.CoreCompileInputs.cache
+C:\Users\052240\source\C-Sharp\ConnectRepository\ConnectRepository\obj\Debug\ConnectRepository.exe
+C:\Users\052240\source\C-Sharp\ConnectRepository\ConnectRepository\obj\Debug\ConnectRepository.pdb

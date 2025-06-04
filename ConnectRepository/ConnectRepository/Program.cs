@@ -10,9 +10,9 @@ namespace ConnectRepository
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello!");
+            Console.WriteLine("Hello !");
             Console.WriteLine("Majid Akbarifar");
-            Console.WriteLine("Git connection");
+            Console.WriteLine("Git connectionhfgh ");
 
         }
     }

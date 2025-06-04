@@ -6,9 +6,11 @@ namespace RätselSpiel.Models
 {
     public class Frage
     {
+        // Alle Property für neine Frage und mit get und set kann wert lesen oder eingestellt
         public string Text { get; set; }
         public List<string> Optionen { get; set; }
         public int IndexRichtigeAntwort { get; set; }
+
         // Konstruktor der Klasse Frage: Initialisiert den Fragetext, die Antwortoptionen und den Index der richtigen Antwort
         public Frage(string FrageText, List<string> AntwortOptionen, int indexRichtigeAntwort)
         {

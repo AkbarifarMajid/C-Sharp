@@ -1,14 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Threading.Tasks;
-using Newtonsoft.Json;
-using RätselSpiel.Models;
+﻿using System; // alle basic classe wie(Date Time, Exception,Math,Console)
+using System.Collections.Generic; // fur die generic class wie (List< >, dictionary <k,v> ...)
+using System.IO; // für die file bearbeiten wie( File.ReadAllText or File.WriteAllText ...) json 
+using System.Threading.Tasks; // asynchroner Programmierung und Task Aufgabe(nicht in gleiche zeit)
+using Newtonsoft.Json; //Wird verwendet, um JSON ↔ Klasse C# zu konvertieren.(JsonConvert.DeserializeObject und JsonConvert.SerializeObject)
+
+using RätselSpiel.Models; //Importiert den Namespace  um auf die Klasse Frage.cs zugreifen zu können
+
 
 namespace RätselSpiel.Services
 {
     public class LogicService
     {
+
+        // Liste von Objekten zum gelesenen Frahe halten
         private readonly List<Frage> alleFragen;
 
         public LogicService()
@@ -18,7 +22,7 @@ namespace RätselSpiel.Services
                 // Adress zur JSON-Datei, die die Logikfragen enthäl
                 string logikFragenAddress = "logikfragen.json";
 
-                // Der gesamte Inhalt der JSON-Datei wird als Text gelesen
+                // Der gesamte Inhalt der JSON-Datei wird als Text(als String) gelesen
                 string logikFragenText = File.ReadAllText(logikFragenAddress);
 
                 // Add alle JSON-Text in eine Liste von Frage-Objekten
@@ -33,6 +37,7 @@ namespace RätselSpiel.Services
             }
         }
 
+        //Metode führt den gesamten Prozess (Fragen stellen, Antworten erhalten und Bewertens)
         public int LogikRätselBewertung()
         {
             if (alleFragen == null || alleFragen.Count == 0)
@@ -41,16 +46,17 @@ namespace RätselSpiel.Services
                 return 0;
             }
 
-            var random = new Random();
+            Random random = new Random();
 
             //Aus der Liste wird eine zufällige Frage ausgewählt.
-            var frage = alleFragen[random.Next(alleFragen.Count)];
+            Frage ausgewählteFrage = alleFragen[random.Next(alleFragen.Count)];
 
-            Console.WriteLine($"\nLogikrätsel:\n{frage.Text}");
+            Console.WriteLine($"\n{ausgewählteFrage.Text}");
 
-            for (int i = 0; i < frage.Optionen.Count; i++)
+            // Schleife zum Durchlaufen aller Antwortoptionen der ausgewählten Frage
+            for (int i = 0; i < ausgewählteFrage.Optionen.Count; i++)
             {
-                Console.WriteLine($"{i + 1}-> {frage.Optionen[i]}");
+                Console.WriteLine($"{i + 1}- {ausgewählteFrage.Optionen[i]}");
             }
 
             Console.Write("Was ist Ihre Antwort (1, 2, 3): ");
@@ -60,33 +66,35 @@ namespace RätselSpiel.Services
 
             // Startet eine Hintergrundaufgabe, die auf die Benutzereingabe wartet.
             // Sie wird unabhängig vom Hauptprogramm gestartet, sodass wir ein Zeitlimit setzen können.
-            Task task = Task.Run(() =>
+            Task eingabeWartenTask = Task.Run(() =>
             {
                 antwortEingabe = Console.ReadLine();
+               
             });
 
-            //Wartet maximal 30 Sekunden (30.000 Millisekunden) auf die Eingabe durch die Task.
-            bool wartenZeit = task.Wait(30000);
+            //Wartet maximal 30 Sekunden (30.000 Millisekunden) auf die Eingabe durch die Task.(True oder false)
+            bool wartenZeit = eingabeWartenTask.Wait(30000);
 
-            if (!wartenZeit)
+            if (!wartenZeit == true)
             {
-                Console.WriteLine("Zeit abgelaufen! Keine Antwort erhalten.\nSie erhalten eine negative Bewertung.");
-                Console.WriteLine($"Richtige Antwort wäre: {frage.Optionen[frage.IndexRichtigeAntwort]}");
+                Console.WriteLine("\nZeit abgelaufen! Keine Antwort erhalten.\nSie erhalten eine negative Bewertung.");
 
+                Console.WriteLine($"Falsch beantwortet. Richtige Antwort wäre: {ausgewählteFrage.IndexRichtigeAntwort + 1}- {ausgewählteFrage.Optionen[ausgewählteFrage.IndexRichtigeAntwort]}");
                 return -1;
             }
 
-            if (int.TryParse(antwortEingabe, out int auswahl) && auswahl >= 1 && auswahl <= frage.Optionen.Count)
+            // TryParse => versucht convert eingabe to int (t,f)
+            if (int.TryParse(antwortEingabe, out int auswahl) && auswahl >= 1 && auswahl <= ausgewählteFrage.Optionen.Count)
             {
                 //Die Indexe der Liste bei 0 beginnen, wird 1 abgezogen 
-                if (frage.uberprufAntwort(auswahl - 1) == true)
+                if (ausgewählteFrage.uberprufAntwort(auswahl - 1) == true)
                 {
                     Console.WriteLine("Richtig beanwortet Sie erhalten zwei Pluspunkte.");
                     return 2;
                 }
                 else
                 {
-                    Console.WriteLine($"Falsch beatwortet!. Richtige Antwort war: {frage.Optionen[frage.IndexRichtigeAntwort]}");
+                    Console.WriteLine($"Falsch beantwortet. Richtige Antwort wäre: {ausgewählteFrage.IndexRichtigeAntwort + 1}- {ausgewählteFrage.Optionen[ausgewählteFrage.IndexRichtigeAntwort]}");
                     Console.WriteLine("Sie erhalten eine negative Bewertung.");
                     return -1;
                 }

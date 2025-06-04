@@ -1,14 +1,17 @@
+
 [
   {
     "Text": "Ein Mann schaut auf ein Foto und sagt: 'Brüder und Schwestern habe ich keine, aber der Vater des Mannes auf dem Bild ist der Sohn meines Vaters.' Wer ist auf dem Bild?",
     "Optionen": [ "Sein Sohn", "Er selbst", "Sein Vater" ],
     "IndexRichtigeAntwort": 0
   },
+
   {
     "Text": "Wenn drei Katzen in drei Minuten drei Mäuse fangen, wie viele Katzen werden benötigt, um 100 Mäuse in 100 Minuten zu fangen?",
     "Optionen": [ "3", "100", "9" ],
     "IndexRichtigeAntwort": 0
   },
+
   {
     "Text": "Ein Zug ist 300 Meter lang und fährt mit 100 km/h. Wie lange braucht er, um einen Tunnel von 700 Metern Länge vollständig zu durchqueren?",
     "Optionen": [ "36 Sekunden", "40 Sekunden", "30 Sekunden" ],
@@ -50,3 +53,4 @@
     "IndexRichtigeAntwort": 1
   }
 ]
+ 
