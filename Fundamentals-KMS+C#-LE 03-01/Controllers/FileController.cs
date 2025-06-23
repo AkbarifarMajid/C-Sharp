@@ -14,12 +14,9 @@ namespace Fundamentals_KMS_C__LE_03_01.Controllers
         // Liste für gespeicherte Adressen im Speicher
         private List<Address> myAddressList;
 
-        // JSON-Dateipfad im gleichen Ordner wie die EXE
 
-        // private readonly string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "FileAddress.json");
-       // private readonly string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "FileAddress.json");
-       //pivate readonly string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\FileAddress.json");
-        private readonly string filePath = @"C:\Users\052240\source\C-Sharp\Fundamentals-KMS+C#-LE 03-01\FileAddress.json";
+        // JSON-Dateipfad im gleichen Ordner wie die EXE
+        private readonly string filePath = "FileAddress.json";
 
 
         // Konstruktor der Klasse – wird beim Erstellen des Objekts automatisch ausgeführt
@@ -109,15 +106,16 @@ namespace Fundamentals_KMS_C__LE_03_01.Controllers
                 string json = JsonConvert.SerializeObject(myAddressList, Formatting.Indented);
                 File.WriteAllText(filePath, json);
             }
-            catch (Exception speicherFehlerException)
+            catch (Exception ex)
             {
-                throw new DateiSpeicherException("Fehler beim Speichern der Datei.", speicherFehlerException);
+                throw new DateiSpeicherException("Fehler beim Speichern der Datei.", ex);
             }
         }
 
 
-        // Lädt die gespeicherten Adressen aus der JSON-Datei
-        // Dadurch ist die Adressliste beim Start sofort einsatzbereit
+
+        /* Lädt die gespeicherten Adressen aus der JSON-Datei
+         Dadurch ist die Adressliste beim Start sofort einsatzbereit*/
         private List<Address> LoadFromFile()
 
             {
@@ -144,9 +142,9 @@ namespace Fundamentals_KMS_C__LE_03_01.Controllers
                         return new List<Address>();
                     }
                 }
-                catch (Exception ladeFehlerEception)
+                catch (Exception ex)
                 {
-                    throw new DateiLadeFehlerException("Fehler beim Laden der Datei: " + ladeFehlerEception.Message);
+                    throw new DateiLadeFehlerException("Fehler beim Laden der Datei: " + ex.Message);
                 }
             }
 

@@ -96,6 +96,7 @@ namespace Fundamentals_KMS_C__LE_03_01.Views
         // Neue Adresse abfragen und hinzufügen
         private void AddAddressView()
         {
+            //ein leeres Adressobjekt erstellt, um die neuen Benutzerinformationen zu speichern.(Neu moddel)
             Address address = new Address();
 
             Console.Write("Voname: ");
@@ -116,6 +117,7 @@ namespace Fundamentals_KMS_C__LE_03_01.Views
             Console.Write("Telefonnummer: ");
             address.PhoneNumber = Console.ReadLine();
 
+            //Das ausgefüllte Adressobjekt an den Controller übergeben, um in der Adressliste gespeichert zu werden.
             controller.AddAddress(address);
             Console.WriteLine("Adresse wurde gespeichert.");
 

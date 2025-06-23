@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="Controllers\ConsloeController.cs" />
     <Compile Include="Controllers\FileController.cs" />
+    <Compile Include="Controllers\MainMenu.cs" />
     <Compile Include="Exceptions\AdresseNichtGefundenException.cs" />
     <Compile Include="Exceptions\DateiLadeFehlerException.cs" />
     <Compile Include="Exceptions\DateiSpeicherException.cs" />
@@ -62,7 +63,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="FileAddress.json" />
+    <None Include="FileAddress.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />
