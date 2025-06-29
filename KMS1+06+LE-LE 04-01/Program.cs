@@ -21,7 +21,7 @@ namespace KMS1_06_LE_LE_04_01
             // Create an EventManager and register the EmailNotifier as a subscriber to the ParticipantAdded event
             var eventManager = new EventManager(new List<IEventNotifier> { emailNotifier, smsNotifier});
 
-
+            //Alt
             //var eventManager = new EventManager(emailNotifier);
 
 
