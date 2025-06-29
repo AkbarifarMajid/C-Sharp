@@ -31,7 +31,7 @@ namespace KMS1_06_LE_LE_04_01.Views.Handlers
 
                 // Add a new participant to the system
                 Participant participant = new Participant(name, email);
-                eventManager.AddParticipant(participant);
+                eventManager.AddParticipantToList(participant);
 
                 Console.WriteLine("\nParticipant added successfully.");
             }

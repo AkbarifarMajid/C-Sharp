@@ -36,7 +36,7 @@ namespace KMS1_06_LE_LE_04_01.Views.Handlers
                     Date = date
                 };
 
-                eventManager.AddEvent(newEvent);
+                eventManager.AddEventToList(newEvent);
                 Console.WriteLine("\nEvent added successfully!");
                 Console.WriteLine("\nPress any key to continue...");
                 Console.ReadKey();

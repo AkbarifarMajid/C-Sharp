@@ -53,7 +53,7 @@ namespace KMS1_06_LE_LE_04_01.Utils
         // Checks the name input Accepts any characters including letters, numbers, and symbols.
         public static bool IsValidName(string name)
         {
-            return name?.Trim().Length > 0;
+            return IsNonEmptyText(name);
         }
 
        

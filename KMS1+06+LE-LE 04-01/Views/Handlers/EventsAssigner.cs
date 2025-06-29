@@ -29,7 +29,7 @@ namespace KMS1_06_LE_LE_04_01.Views.Handlers
 
 
                 // Attempt to assign a participant to the event
-                bool success = eventManager.AddEventParticipant(eventName, email);
+                bool success = eventManager.AddParticipant(eventName, email);
 
                 if (success)
                 {

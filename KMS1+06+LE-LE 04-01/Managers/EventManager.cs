@@ -22,7 +22,7 @@ namespace KMS1_06_LE_LE_04_01.Managers
         public delegate void ParticipantAddedHandler(object sender, Participant participant);
 
         // Event that is triggered when a new participant is added
-        public event ParticipantAddedHandler EventParticipantAdded;
+        public event ParticipantAddedHandler ParticipantAdded;
 
 
 
@@ -30,12 +30,28 @@ namespace KMS1_06_LE_LE_04_01.Managers
         // Constructor : Subscribes the passed IEventNotifier to the ParticipantAdded event
         public EventManager(IEventNotifier notifier)
         {
-            EventParticipantAdded += notifier.Notify; // Adds the Notify method as a subscriber to the event
+            ParticipantAdded += (sender, participant) =>
+            {
+                //Metoh-Event_Handler (Notifiy)
+                notifier.Notify(sender, participant);
+            };
+        }
+
+        public EventManager(List<IEventNotifier> notifiers)
+        {
+            foreach (var notifier in notifiers)
+            {
+                ParticipantAdded += (sender, participant) =>
+                {
+                    //Metoh-Event_Handler (Notifiy)
+                    notifier.Notify(sender, participant);
+                };
+            }
         }
 
 
         // Adds a new event to the list if there is no other event with the same name
-        public void AddEvent(Event myEvent)
+        public void AddEventToList(Event myEvent)
         {
             if(eventsList.Count(e => e.Name == myEvent.Name) == 0)
                 eventsList.Add(myEvent);
@@ -43,7 +59,7 @@ namespace KMS1_06_LE_LE_04_01.Managers
 
 
         // Adds a new participant to the list if no participant with the same name already exists
-        public void AddParticipant(Participant myParticipant)
+        public void AddParticipantToList(Participant myParticipant)
         {
             if (participantsList.Count(e => e.Email == myParticipant.Email) == 0)
                 participantsList.Add(myParticipant);
@@ -68,7 +84,7 @@ namespace KMS1_06_LE_LE_04_01.Managers
         /* metode add participant to a specific event by name(Puplicher)
          Returns false if the event or participant is not found.*/
 
-        public bool AddEventParticipant(string eventName ,string participantEmail)
+        public bool AddParticipant(string eventName ,string participantEmail)
         {
             var currentEvent = eventsList.FirstOrDefault(e => e.Name == eventName);
             if (currentEvent == null)
@@ -88,7 +104,7 @@ namespace KMS1_06_LE_LE_04_01.Managers
 
             if (result)
             {
-                EventParticipantAdded?.Invoke(this, currentParticipant); //If successful adds the participant to the event and triggers the ParticipantAdded event.
+                ParticipantAdded?.Invoke(this, currentParticipant); //If successful adds the participant to the event and triggers the ParticipantAdded event.
 
             }
 

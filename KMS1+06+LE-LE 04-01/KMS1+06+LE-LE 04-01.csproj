@@ -48,6 +48,7 @@
     <Compile Include="Models\Participant.cs" />
     <Compile Include="Notifiers\EmailNotifier.cs" />
     <Compile Include="Notifiers\IEventNotifier.cs" />
+    <Compile Include="Notifiers\SmsNotifier.cs" />
     <Compile Include="Notifiers\Utils\InputValidator.cs" />
     <Compile Include="Notifiers\Utils\MainMenuOption.cs" />
     <Compile Include="Program.cs" />
