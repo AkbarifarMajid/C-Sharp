@@ -28,6 +28,8 @@ namespace KMS1_06_LE_LE_04_01.Managers
 
 
         // Constructor : Subscribes the passed IEventNotifier to the ParticipantAdded event
+        /* Lambda expression to handle the ParticipantAdded event:
+        When a participant is successfully added to an event, this handler is triggered */
         public EventManager(IEventNotifier notifier)
         {
             ParticipantAdded += (sender, participant) =>
@@ -37,6 +39,9 @@ namespace KMS1_06_LE_LE_04_01.Managers
             };
         }
 
+        // Constructor : Subscribes the passed IEventNotifier to the ParticipantAdded event
+        /* Lambda expression to handle the ParticipantAdded event:
+        When a participant is successfully added to an event, this handler is triggered */
         public EventManager(List<IEventNotifier> notifiers)
         {
             foreach (var notifier in notifiers)
@@ -48,6 +53,8 @@ namespace KMS1_06_LE_LE_04_01.Managers
                 };
             }
         }
+
+        //-----------------------------------------------------------------------------
 
 
         // Adds a new event to the list if there is no other event with the same name
