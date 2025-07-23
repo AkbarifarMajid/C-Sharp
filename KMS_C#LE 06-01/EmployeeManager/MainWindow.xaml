@@ -1,0 +1,106 @@
+﻿<Window x:Class="EmployeeManager.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="clr-namespace:EmployeeManager.ViewModels"
+        Title="Employee Manager" Height="250" Width="400">
+
+        <!-- Connected View to ViewModel -->
+        <Window.DataContext>
+            <vm:MainViewModel/>
+        </Window.DataContext>
+
+    
+    <Grid Cursor="Hand" Margin="0,0,0,-78" RenderTransformOrigin="0.5,0.5">
+
+        <!-- Row Definitions-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+
+        <!-- Column Definitions-->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        
+        
+        <!-- Backgrand Form-->
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="Black"/>
+            <GradientStop Color="#FFCCCCCC" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+
+        
+        <!-- Label and TextBox for Name -->
+        <Label 
+               Grid.Row="0" 
+               Grid.Column="0" 
+               Content="Name:"
+               FontSize="16"
+               Margin="5"
+               Foreground="#FFEAEAEA"
+               VerticalAlignment="Center"/>
+        
+        <TextBox 
+             Grid.Row="0" 
+             Grid.Column="1"
+             FontSize="16"
+             Background="#FFF7F7F7"
+             Foreground="#FF222222"
+             BorderBrush="#FF888888"
+             Padding="4"
+             Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" Margin="5"/>
+
+        
+        <!-- Label and TextBox for Age -->
+        <Label 
+               Grid.Row="1" 
+               Grid.Column="0" 
+               Content="Alter:" 
+               VerticalAlignment="Center"
+               FontWeight="SemiBold"
+               FontSize="16"
+               Margin="5"
+               Foreground="#FFEAEAEA"/>
+        
+        
+        <TextBox 
+             Grid.Row="1" 
+             Grid.Column="1"
+             FontSize="16"
+             Background="#FFF7F7F7"
+             Foreground="#FF222222"
+             BorderBrush="#FF888888"
+             Padding="4"
+             Text="{Binding Age, UpdateSourceTrigger=PropertyChanged}" Margin="5"/>
+
+        
+        <!-- Button with Command -->
+            <Button Grid.Row="2"
+            Grid.ColumnSpan="2" 
+            Content="Absenden"
+            Margin="5" 
+            Click="Button_Click"
+            HorizontalAlignment="Center"
+            Width="100"/>
+
+
+        <!-- TextBlock to show welcome message -->
+        <TextBlock 
+            Grid.Row="3" 
+            Grid.ColumnSpan="2" 
+            FontSize="16"
+            FontWeight="SemiBold"
+            Foreground="#FFEAEAEA"
+            TextAlignment="Center"
+            Margin="10"
+            Text="{Binding WelcomeMessage}"/>
+        
+    </Grid>
+</Window>
