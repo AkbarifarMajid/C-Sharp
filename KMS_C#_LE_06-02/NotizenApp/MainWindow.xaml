@@ -1,0 +1,69 @@
+﻿<Window x:Class="NotizenApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="clr-namespace:NotizenApp.ViewModel"
+        Title="Notizen App" Height="400" Width="500">
+
+    <!-- Set ViewModel as DataContext for the entire window -->
+    <Window.DataContext>
+        <vm:MainViewModel/>
+    </Window.DataContext>
+
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Top section: Enter a note -->
+        <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+            <TextBox Width="250"
+                     Text="{Binding NewNoteText, UpdateSourceTrigger=PropertyChanged}" 
+                     Margin="0,0,10,0"/>
+            <Button Content="ADD"
+                    Command="{Binding AddNoteCommand}"
+                    Width="100"/>
+        </StackPanel>
+
+        
+        
+        <!-- List Note -->
+        <ListBox Grid.Row="1"
+                 ItemsSource="{Binding Notes}"
+                 SelectedItem="{Binding SelectedNote}"
+                 Margin="0,0,0,10">
+            
+            <ListBox.ItemTemplate>
+                
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal" Margin="0,5">
+                        <!-- Txt Note -->
+                        <TextBlock Text="{Binding Content}" Width="200"/>
+
+                        <!-- Daste Note-->
+                        <TextBlock Text="{Binding CreatedAt}" Width="120" Margin="5,0"/>
+
+                        <!-- Delete Bottun -->
+                        <Button Content="Delete"
+                                Command="{Binding DataContext.DeleteNoteCommand, RelativeSource={RelativeSource AncestorType=Window}}"
+                                CommandParameter="{Binding}"
+                                Width="60"/>
+                    </StackPanel>
+                    
+                </DataTemplate>
+                
+            </ListBox.ItemTemplate>
+            
+        </ListBox>
+
+        <!-- Show full text of selected note -->
+        <TextBlock Grid.Row="2"
+                   Text="{Binding SelectedNoteContent}"
+                   FontSize="16"
+                   FontWeight="Bold"
+                   Foreground="DarkGreen"
+                   TextWrapping="Wrap"
+                   Margin="0,5,0,0"/>
+    </Grid>
+</Window>
