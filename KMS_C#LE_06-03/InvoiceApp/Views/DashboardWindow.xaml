@@ -1,0 +1,116 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="clr-namespace:InvoiceApp.ViewModels"
+        xmlns:av="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="av" x:Class="InvoiceApp.Views.DashboardWindow"
+        Title="Ivoice Gmbh"
+        Height="600"
+        Width="950"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        SizeToContent="Manual">
+
+    <!-- Connect to ViewModel -->
+    <Window.DataContext>
+        <vm:DashboardViewModel/>
+    </Window.DataContext>
+
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Row 0 - Select Customer -->
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Margin="0,0,0,10" HorizontalAlignment="Right" Width="834">
+            <TextBlock Text="Customer: " VerticalAlignment="Center" FontWeight="Bold" Width="63"/>
+            <ComboBox Width="200" Margin="5,0"
+                      ItemsSource="{Binding Customers}"
+                      SelectedItem="{Binding SelectedCustomer}"
+                      DisplayMemberPath="Name"/>
+
+            <!-- Botton Add new Customer -->
+            <Button Content="Add New Customer" 
+                    Command="{Binding AddCustomerCommand}" 
+                    Margin="5" Padding="5"/>
+
+            <!-- Customer selection message -->
+            <TextBlock Margin="15,0" Foreground="DarkBlue" VerticalAlignment="Center"/>
+        </StackPanel>
+
+        <!-- Row 1: Select product and quantity -->
+        <StackPanel Orientation="Horizontal" Grid.Row="1" Margin="0,0,0,10" HorizontalAlignment="Right" Width="833">
+            <TextBlock Text="Item: " VerticalAlignment="Center" FontWeight="Bold"/>
+            <ComboBox Width="193" Margin="5,0"
+              ItemsSource="{Binding Items}"
+              SelectedItem="{Binding SelectedItem}"
+              DisplayMemberPath="Name"/>
+
+            <!-- Add product to product list button (new form opens) -->
+            <Button Content="Add New Item" Width="93" Height="30" Margin="5,0"
+            Command="{Binding AddItemCommand}" 
+            ToolTip="Add new Item"/>
+
+            <TextBlock Text="Digit: " Margin="20,0,5,0" VerticalAlignment="Center"/>
+            <TextBox Width="60" Margin="5,0" 
+             Text="{Binding Quantity, UpdateSourceTrigger=PropertyChanged}"/>
+            <Button Content="Add to invoice" 
+            Padding="10,5" 
+            Command="{Binding AddToInvoiceCommand}" Width="103" />
+
+            <!-- Add item to invoice button -->
+        </StackPanel>
+
+
+
+        <!-- Row 3: Invoice Items Table -->
+        <DataGrid Grid.Row="3"
+                  ItemsSource="{Binding InvoiceItems}"
+                  AutoGenerateColumns="False"
+                  Margin="10">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Name Item" Binding="{Binding Name}" Width="*" />
+                <DataGridTextColumn Header="Digit" Binding="{Binding Quantity}" Width="*" />
+                <DataGridTextColumn Header="Unit price" Binding="{Binding Price}" Width="*" />
+                <DataGridTextColumn Header="Total Price" Binding="{Binding Total}" Width="*" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+
+        <!-- Row 4: Final total and save, print, exit buttons -->
+        <Grid Grid.Row="4" Margin="0,10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Tottal Sum and Tex -->
+            <StackPanel Grid.Column="0" Orientation="Vertical" HorizontalAlignment="Left" Margin="0,0,20,0">
+                <TextBlock Text="{Binding TotalAmount, StringFormat=Total excluding taxes. : \{0\} Euro}" 
+                           Foreground="DarkSlateGray" FontWeight="Bold" Margin="0,0,0,5"/>
+                <TextBlock Text="{Binding TaxAmount, StringFormat=Tax (20٪): \{0\} Euro}"
+                           Foreground="DarkOrange" FontWeight="Bold" Margin="0,0,0,5"/>
+                <TextBlock Text="{Binding GrandTotal, StringFormat=Final amount payable: \{0\} Euro}"
+                           Foreground="DarkGreen" FontWeight="Bold" FontSize="15"/>
+            </StackPanel>
+
+            <!-- Bottons -->
+            <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button Content="Save Invoice" 
+                        Margin="10,0" Padding="10,5" 
+                        Command="{Binding SaveInvoiceCommand}" />
+
+                <Button Content="Print" 
+                        Margin="5,0" Padding="10,5" 
+                        Command="{Binding PrintInvoiceCommand}" />
+
+                <Button Content="Exit" 
+                        Margin="5,0" Padding="10,5" 
+                        Command="{Binding ExitCommand}" />
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

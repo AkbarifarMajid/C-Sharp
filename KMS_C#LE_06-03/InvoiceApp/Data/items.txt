@@ -1,0 +1,12 @@
+Gold|IT-0001|10
+Banane|IT-0002|1,99
+tree|IT-0003|12
+oo|IT-0004|10
+qqqq|IT-0005|2
+test6|IT-0006|12
+uuzui|IT-0007|44
+SchwarzTee|IT-0008|12
+Ice|IT-0009|1.2
+Heft|IT-0010|3.1
+Salz|IT-0011|1.1
+test2|IT-0012|5

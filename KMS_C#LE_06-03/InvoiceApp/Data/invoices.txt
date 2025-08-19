@@ -1,0 +1,108 @@
+﻿
+=================================
+Name Customer: Taomm - KU-0008
+Date: 06.08.2025     Time: 12:13:53
+
+User Name: admin
+
+List Items:
+1. Item: Heft    Digit: 10   Unit: 3,10   Total: 31,00
+2. Item: Banane    Digit: 1   Unit: 199,00   Total: 199,00
+3. Item: Gold    Digit: 3   Unit: 10,00   Total: 30,00
+
+Tax-free collection:	€ 260,00
+Tax:		€ 52,00
+Total Price:	€ 312,00
+=================================
+
+=================================
+Name Customer: Majid - KU-0001
+Date: 07.08.2025     Time: 16:03:25
+
+User Name: admin
+
+List Items:
+1. Item: Banane    Digit: 6   Unit: 199,00   Total: 1194,00
+2. Item: Ice    Digit: 3   Unit: 1,20   Total: 3,60
+3. Item: Heft    Digit: 1   Unit: 3,10   Total: 3,10
+
+Tax-free collection:	€ 1200,70
+Tax:		€ 240,14
+Total Price:	€ 1440,84
+=================================
+
+=================================
+Name Customer: Maryam - KU-0003
+Date: 18.08.2025     Time: 11:26:33
+
+User Name: admin
+
+List Items:
+1. Item: tree    Digit: 1   Unit: 12,00   Total: 12,00
+2. Item: qqqq    Digit: 2   Unit: 2,00   Total: 4,00
+3. Item: SchwarzTee    Digit: 4   Unit: 12,00   Total: 48,00
+
+Tax-free collection:	€ 64,00
+Tax:		€ 12,80
+Total Price:	€ 76,80
+=================================
+
+=================================
+Name Customer: Tida - KU-0009
+Date: 18.08.2025     Time: 15:45:26
+
+User Name: admin
+
+List Items:
+1. Item: Banane    Digit: 2   Unit: 199,00   Total: 398,00
+
+Tax-free collection:	€ 398,00
+Tax:		€ 79,60
+Total Price:	€ 477,60
+=================================
+
+=================================
+Name Customer: Sara - KU-0004
+Date: 18.08.2025     Time: 15:53:07
+
+User Name: admin
+
+List Items:
+1. Item: Salz    Digit: 5   Unit: 1,10   Total: 5,50
+2. Item: SchwarzTee    Digit: 6   Unit: 12,00   Total: 72,00
+
+Tax-free collection:	€ 77,50
+Tax:		€ 15,50
+Total Price:	€ 93,00
+=================================
+
+=================================
+Name Customer: Martin - KU-0007
+Date: 19.08.2025     Time: 11:19:16
+
+User Name: admin
+
+List Items:
+1. Item: Ice    Digit: 3   Unit: 1,20   Total: 3,60
+2. Item: Heft    Digit: 4   Unit: 3,10   Total: 12,40
+
+Tax-free collection:	€ 16,00
+Tax:		€ 3,20
+Total Price:	€ 19,20
+=================================
+
+=================================
+Name Customer: Ilda - KU-0010
+Date: 19.08.2025     Time: 14:07:48
+
+User Name: admin
+
+List Items:
+1. Item: test2    Digit: 2   Unit: 5,00   Total: 10,00
+2. Item: SchwarzTee    Digit: 2   Unit: 12,00   Total: 24,00
+
+Tax-free collection:	€ 34,00
+Tax:		€ 6,80
+Total Price:	€ 40,80
+=================================
+

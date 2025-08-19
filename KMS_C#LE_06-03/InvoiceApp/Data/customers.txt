@@ -1,0 +1,10 @@
+Majid|KU-0001|Graz-8010
+Alex|KU-0002|Fohnsdorf
+Maryam|KU-0003|Feldkirchen bei Graz-8073
+Sara|KU-0004|Wien-86457
+ooo|KU-0005|oooo
+wwww|KU-0006|wwww
+Martin|KU-0007|Salzburg
+Taomm|KU-0008|Radel Strasse 20
+Tida|KU-0009|Graz
+Ilda|KU-0010|Graz
