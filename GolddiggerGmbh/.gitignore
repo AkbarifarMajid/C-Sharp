@@ -1,0 +1,13 @@
+# Visual Studio
+.vs/ #cach and seting
+bin/ #Compilation outputs (EXE/DLL and dependent files).
+obj/
+*.user #User personal settings files in Visual Studio
+*.suo #Solution User Options files
+
+# NuGet
+packages/ #NuGet packages folder
+!packages/repositories.config #The ! sign means "make an exception for this and do not ignore it"
+
+# Ignore all App.config files in any project
+**/App.config #**/ means "in all subfolders".

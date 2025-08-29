@@ -1,0 +1,26 @@
+﻿<Window x:Class="GolddiggerGmbh.Views.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Login" Height="220" Width="350"
+        WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid Margin="20">
+        <StackPanel VerticalAlignment="Center">
+            <TextBlock Text="Username" Margin="0,0,0,5"/>
+            <TextBox Text="{Binding Username, UpdateSourceTrigger=PropertyChanged}"
+                     Margin="0,0,0,10" Width="200"/>
+
+            <TextBlock Text="Password" Margin="0,0,0,5"/>
+            <PasswordBox x:Name="PasswordBox"
+                         PasswordChanged="PasswordBox_PasswordChanged"
+                         Margin="0,0,0,10" Width="200"/>
+
+            <!-- Click-based; no Command; enabled state bound to CanLogin -->
+            <Button Content="Enter"
+                    Width="100"
+                    HorizontalAlignment="Center"
+                    IsDefault="True"
+                    IsEnabled="{Binding CanLogin}"
+                    Click="Enter_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
